@@ -1,0 +1,39 @@
+<div class="row search-details">
+  <div class="search-form column-12">
+                <input name="search"  #searchKeyword placeholder="Search Q&A" >
+                <button  (click)="stackExchangeSearch(searchKeyword)" >Search</button>
+    </div>
+</div>
+<div>
+
+<div class="row search-listing"  *ngFor="let g of searchResults.items">
+        <div class="column-11" [class.active]= "g.is_accepted===true" >
+                  <div class="row">
+                      <div class="column-12">
+                            <a  class="title-link" target="_blank" [href]="'http://stackoverflow.com/questions/'+g.question_id" >{{g.title}}</a>
+                            <p class="answer" [innerHTML]="g.body"></p>
+                      </div>
+                  </div>
+                  <div class="row">
+                        <div class="column-12">
+                          <div class="row">
+                                <div class="column-6">
+                                  <span>Score</span>: {{g.score}}
+                                </div>
+                                <div class="column-6">
+                                    <span>Answered</span>: {{g.score?"Yes":"No"}}
+                                </div>
+                          </div>
+                          <div class="row">
+                                <div class="column-6">
+                                  <span>Tags</span> : {{g.tags}}
+                                </div>
+                                <div class="column-6">
+                                  <span>Asked Time</span> : {{g.creation_date | date}}
+                                </div>
+                          </div>
+                        </div>
+                  </div>
+        </div>
+      </div>
+</div>

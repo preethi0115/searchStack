@@ -1,0 +1,107 @@
+@import "../../assets/styles/partials/_all";
+
+.search-details{
+    .search-form{
+        margin:0 auto;
+          input{
+          	color: #333333;
+            font-family: 'Quicksand', sans-serif;
+          	font-weight: bold;
+            width:96%;
+          	height:44px;
+            padding: 0 2%;
+            margin:20px 0 0 0;
+          	@include roundedCorners(4);
+          	@include opacity(.8);
+            border:1px solid #c8ccd0;
+          }
+          button{
+          		color:#fff;
+          		border:0 none;
+              margin:10px 0;
+              width:50%;
+          		height:44px;
+              clear:both;
+              float:right;
+          		text-transform:uppercase;
+              cursor:pointer;
+              @include linearGradient(#0072e6, #0059b3);
+          		@include roundedCorners(6);
+          }
+    }
+}
+
+
+.search-listing{
+    padding:30px 0 20px;
+    color:rgba(0,0,0,0.9);
+    font-size:1em;
+    font-weight: 500;
+    line-height: 20px;
+    border-bottom:solid 1px rgba(0,0,0,0.2);
+      .title-link{
+        font-size:1.2em;
+        text-transform:capitalize;
+      }
+      span{
+        color:rgba(0,0,0,0.87);
+        font-size: 1em;
+        font-weight: 500;
+        line-height: 20px;
+      }
+      .column-1{
+        text-align:center;
+      }
+      .answer{
+        padding:8px 0;
+      }
+      .no-of-results{
+        padding:20px 0 5px 0;
+      }
+      .active{
+        background:#fff4da;
+        padding:20px 1%;
+      }
+}
+
+
+@media only screen and (min-width : 480px) {
+	.search-details{
+	    .search-form{
+					button{
+						float:right;
+						width:30%;
+					}
+		}
+	}
+  .search-listing{
+    font-size:1.2em;
+      .title-link{
+        font-size:1.4em;
+        text-transform:capitalize;
+      }
+      span{
+        color:rgba(0,0,0,0.87);
+        font-size: 1em;
+        font-weight: 500;
+        line-height: 20px;
+      }
+  }
+	@for $i from 1 through $grid-columns {
+			.column-#{$i} {
+					width: 100% / $grid-columns * $i;
+					float:left;
+					}
+			}
+	}
+
+  @media only screen and (min-width : 768px) {
+  	.search-details{
+  	    .search-form{
+  					button{
+  						float:right;
+  						width:20%;
+  					}
+  		}
+  	}
+  	}

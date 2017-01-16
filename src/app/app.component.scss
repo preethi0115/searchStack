@@ -1,0 +1,10 @@
+@import "../assets/styles/partials/_all";
+
+.wrapper {
+	  margin: 0 auto;
+		padding:1em;
+  }
+
+.wrapper, .row {
+  	@extend %clearfix;
+  }
